@@ -32,16 +32,6 @@ void drawBall(Ball b)
 
 int main()
 {
-
-    /**
-     * TODO
-     * 1. initial velocity = 0 -> fall according to gravity downwards
-     * ..option to initialize x component?
-     * 2. bounce (spring force?)
-     * 3. slowly lose energy due to friction
-     * 4. stop
-     *
-     */
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Bouncy Ball");
     SetTargetFPS(130);
 
@@ -52,12 +42,12 @@ int main()
 
     Ball bouncy = (Ball){centerX, centerY, 0, 0, 0, 0, ballRadius, PURPLE};
 
-    // bouncy.reboundCoefficient = 0.8; // v_ref = v_inc * coeff 
+    bouncy.reboundCoefficient = 0.8; // v_ref = v_inc * coeff 
 
-    // bouncy.dx = 1.0;
-    // bouncy.dy = 1.0;
-    bouncy.dx = 0.0;
-    bouncy.dy = 0.0;
+    bouncy.dx = 1.0;
+    bouncy.dy = 1.0;
+    // bouncy.dx = 0.0;
+    // bouncy.dy = 0.0;
 
     while (!WindowShouldClose())
     {
@@ -81,7 +71,7 @@ int main()
         {
 
             bouncy.dx *= -1;
-            bouncy.dy *= -1 ;
+            bouncy.dy *= -1 * bouncy.reboundCoefficient ;
         }
 
 
