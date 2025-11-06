@@ -54,8 +54,10 @@ int main()
 
     // bouncy.reboundCoefficient = 0.8; // v_ref = v_inc * coeff 
 
-    bouncy.dx = 1.0;
-    bouncy.dy = 1.0;
+    // bouncy.dx = 1.0;
+    // bouncy.dy = 1.0;
+    bouncy.dx = 0.0;
+    bouncy.dy = 0.0;
 
     while (!WindowShouldClose())
     {
